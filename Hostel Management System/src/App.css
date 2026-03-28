@@ -676,3 +676,917 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* login */
+.lp-root {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── LEFT DECORATIVE PANEL ────────────────────────────────────── */
+
+.lp-panel {
+  flex: 0 0 45%;
+  position: relative;
+  overflow: hidden;
+  /* Replace with your hostel image */
+  background: linear-gradient(135deg, #2d1b15 0%, #6b3f2e 50%, #c9897a 100%);
+  display: flex;
+  align-items: flex-end;
+}
+
+/* Subtle pattern overlay */
+.lp-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(201, 137, 122, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(28, 25, 23, 0.4) 0%, transparent 50%);
+}
+
+.lp-panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28, 25, 23, 0.85) 0%, transparent 60%);
+}
+
+.lp-panel-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px;
+  width: 100%;
+}
+
+.lp-panel-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.lp-panel-logo span {
+  color: #f0c8be;
+  font-style: italic;
+}
+
+.lp-panel-tagline {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 36px;
+  max-width: 320px;
+}
+
+
+/* ── RIGHT FORM SIDE ─────────────────────────────────────────── */
+
+.lp-form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  gap: 24px;
+  background: var(--cream);
+}
+
+.lp-form-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.lp-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.lp-back-link:hover {
+  color: var(--rose);
+}
+
+/* Header */
+.lp-form-header {
+  margin-bottom: 28px;
+}
+
+.lp-form-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.lp-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.lp-form-sub {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+
+
+
+.lp-role-tab {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.22s;
+}
+
+.lp-role-tab.active {
+  background: var(--white);
+  color: var(--rose-dk);
+  box-shadow: 0 2px 10px rgba(28, 25, 23, 0.08);
+  font-weight: 600;
+}
+
+/* Form fields */
+.lp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.lp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lp-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lp-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.2px;
+}
+
+
+.lp-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.lp-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1.5px solid var(--sand);
+  border-radius: 10px;
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  transition: border-color 0.22s, box-shadow 0.22s;
+  outline: none;
+}
+
+.lp-input::placeholder {
+  color: #b5aba4;
+}
+
+.lp-input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(201, 137, 122, 0.12);
+}
+
+/* Submit button */
+.lp-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--rose);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.4px;
+  margin-top: 4px;
+  box-shadow: 0 6px 24px rgba(201, 137, 122, 0.35);
+}
+
+.lp-submit-btn:hover {
+  background: var(--rose-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(201, 137, 122, 0.45);
+}
+
+/* Divider */
+.lp-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+}
+
+/* Register */
+.lp-register-text {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.lp-register-link {
+  color: var(--rose);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.lp-register-link:hover {
+  color: var(--rose-dk);
+}
+
+/* Footer note */
+.lp-footer-note {
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .lp-panel {
+    display: none;
+  }
+
+  .lp-form-side {
+    padding: 32px 24px;
+  }
+}
+
+
+
+/* book-room */
+.br-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 68px;
+  background: rgba(250, 248, 244, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 137, 122, 0.15);
+}
+
+.br-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.4px;
+}
+
+.br-logo span {
+  color: var(--rose);
+}
+
+.br-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.br-nav-link {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.br-nav-link:hover {
+  color: var(--rose);
+}
+
+.br-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.22s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.br-btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--rose);
+  color: var(--rose);
+}
+
+.br-btn-ghost:hover {
+  background: var(--rose);
+  color: var(--white);
+}
+
+/* ── PAGE LAYOUT ─────────────────────────────────────────────── */
+
+.br-page {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  min-height: calc(100vh - 68px);
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+
+.br-sidebar {
+  background: var(--white);
+  border-right: 1px solid var(--sand);
+  padding: 36px 28px;
+  overflow-y: auto;
+}
+
+.br-sidebar-header {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.br-sidebar-eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.br-sidebar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.br-sidebar-sub {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* Room cards in sidebar */
+.br-room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.br-room-card {
+  border: 1.5px solid var(--sand);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  background: var(--cream);
+}
+
+.br-room-card:hover {
+  border-color: var(--rose);
+  box-shadow: 0 4px 20px rgba(201, 137, 122, 0.15);
+  transform: translateY(-2px);
+}
+
+.br-room-card.selected {
+  border-color: var(--rose);
+  box-shadow: 0 4px 24px rgba(201, 137, 122, 0.2);
+}
+
+.br-room-card.full {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.br-room-card.full:hover {
+  transform: none;
+  border-color: var(--sand);
+  box-shadow: none;
+}
+
+.br-room-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.br-room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.br-room-card:hover .br-room-img-wrap img {
+  transform: scale(1.05);
+}
+
+.br-status-dot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.br-status-dot.green {
+  background: var(--green);
+}
+
+.br-status-dot.red {
+  background: var(--red);
+}
+
+.br-room-info {
+  padding: 14px 14px 16px;
+}
+
+.br-room-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.br-room-num {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.br-room-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.br-status-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.br-status-badge.green {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.br-status-badge.red {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.br-room-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.br-meta-pill {
+  font-size: 10.5px;
+  padding: 3px 10px;
+  border-radius: 50px;
+  background: var(--sand);
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.br-meta-pill.price {
+  background: rgba(201, 137, 122, 0.12);
+  color: var(--rose-dk);
+  font-weight: 600;
+}
+
+/* Occupancy bar */
+.br-occ-track {
+  width: 100%;
+  height: 4px;
+  background: var(--sand);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.br-occ-fill {
+  height: 100%;
+  background: var(--rose);
+  border-radius: 99px;
+}
+
+.br-room-features {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.br-feat {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  background: rgba(201, 137, 122, 0.08);
+  color: var(--rose-dk);
+  font-weight: 500;
+}
+
+.br-selected-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--rose);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 4px 12px;
+  border-bottom-left-radius: 10px;
+}
+
+/* ── MAIN FORM AREA ──────────────────────────────────────────── */
+
+.br-main {
+  padding: 40px 48px;
+  overflow-y: auto;
+}
+
+.br-form-header {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.br-form-eyebrow {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.br-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.br-form-sub {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+/* Selected room summary card */
+.br-selected-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border: 1.5px solid rgba(201, 137, 122, 0.3);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(201, 137, 122, 0.08);
+}
+
+.br-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.br-summary-img {
+  width: 56px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.br-summary-room {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.br-summary-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.br-summary-right {
+  text-align: right;
+}
+
+.br-summary-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rose-dk);
+}
+
+.br-summary-freq {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Form grid */
+.br-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.br-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.br-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.br-col-2 {
+  grid-column: span 2;
+}
+
+.br-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.br-req {
+  color: var(--rose);
+  margin-left: 2px;
+}
+
+/* Input base */
+.br-input,
+.br-textarea,
+.br-select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--sand);
+  border-radius: 10px;
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.22s, box-shadow 0.22s;
+  appearance: none;
+}
+
+.br-input::placeholder,
+.br-textarea::placeholder {
+  color: #b5aba4;
+}
+
+.br-input:focus,
+.br-textarea:focus,
+.br-select:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(201, 137, 122, 0.1);
+}
+
+.br-textarea {
+  resize: vertical;
+  min-height: 70px;
+  line-height: 1.5;
+}
+
+.br-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b5f58' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Phone prefix */
+.br-input-wrap {
+  display: flex;
+  align-items: stretch;
+}
+
+.br-input-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: var(--sand);
+  border: 1.5px solid var(--sand);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.br-input-prefixed {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Read-only room field */
+.br-input-readonly {
+  background: var(--cream);
+  color: var(--muted);
+  cursor: default;
+  border-style: dashed;
+}
+
+/* Terms row */
+.br-terms-row {
+  margin-top: 4px;
+}
+
+.br-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.br-checkbox {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--rose);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.br-terms-link {
+  color: var(--rose);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.br-terms-link:hover {
+  color: var(--rose-dk);
+  text-decoration: underline;
+}
+
+/* Form footer */
+.br-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--sand);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.br-form-note {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.br-submit-btn {
+  padding: 14px 40px;
+  background: var(--rose);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  box-shadow: 0 6px 24px rgba(201, 137, 122, 0.35);
+}
+
+.br-submit-btn:hover {
+  background: var(--rose-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(201, 137, 122, 0.45);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+  .br-page {
+    grid-template-columns: 1fr;
+  }
+
+  .br-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--sand);
+  }
+
+  .br-room-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .br-main {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .br-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .br-col-2 {
+    grid-column: span 1;
+  }
+
+  .br-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .br-submit-btn {
+    text-align: center;
+    width: 100%;
+  }
+}

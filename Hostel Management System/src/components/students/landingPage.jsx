@@ -72,8 +72,12 @@ const LandingPage = () => {
           Shikha <span>Girls</span> Hostel
         </div>
         <div className="sg-nav-actions">
-          <button className="sg-btn sg-btn-ghost">Login</button>
-          <button className="sg-btn sg-btn-solid">Book Room</button>
+          <a href="/login" className="sg-btn sg-btn-ghost">
+            Login
+          </a>
+          <a href="/book-room" className="sg-btn sg-btn-solid">
+            Book Room
+          </a>
         </div>
       </nav>
 
