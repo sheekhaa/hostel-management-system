@@ -6,8 +6,6 @@ import hostel from "../img/hostel.jpeg";
 const rooms = [
   {
     img: twoseater,
-    badge: "Popular",
-    title: "Double Retreat",
     roomNumber: "101",
     seats: "2-Seater",
     totalSeats: 2,
@@ -19,8 +17,6 @@ const rooms = [
   },
   {
     img: threeseater,
-    badge: "Best Value",
-    title: "Trio Suite",
     roomNumber: "102",
     seats: "3-Seater",
     totalSeats: 3,
@@ -32,8 +28,6 @@ const rooms = [
   },
   {
     img: fourseater,
-    badge: "Budget Pick",
-    title: "Quad Haven",
     roomNumber: "103",
     seats: "4-Seater",
     totalSeats: 4,
@@ -54,13 +48,6 @@ const amenities = [
   { icon: "📚", label: "Study Room" },
   { icon: "🚌", label: "Transport" },
   { icon: "💡", label: "Power Backup" },
-];
-
-const stats = [
-  { num: "200+", label: "Happy Residents" },
-  { num: "10+", label: "Years Trusted" },
-  { num: "4.9★", label: "Student Rating" },
-  { num: "24/7", label: "Support" },
 ];
 
 const LandingPage = () => {
@@ -96,10 +83,6 @@ const LandingPage = () => {
             A warm, secure, and student-friendly hostel built for young women
             who deserve more than just a bed.
           </p>
-          <div className="sg-hero-cta">
-            <button className="sg-cta-primary">Explore Rooms</button>
-            <button className="sg-cta-secondary">Schedule a Visit</button>
-          </div>
         </div>
         <div className="sg-scroll">
           <div className="sg-scroll-line" />
@@ -107,22 +90,12 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ── STATS STRIP ── */}
-      <div className="sg-stats">
-        {stats.map((s) => (
-          <div className="sg-stat" key={s.label}>
-            <div className="sg-stat-num">{s.num}</div>
-            <div className="sg-stat-label">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
       {/* ── ROOMS ── */}
       <section className="sg-rooms">
         <div className="sg-section-label">Accommodations</div>
         <h2 className="sg-section-title">Choose your perfect room</h2>
         <p className="sg-section-sub">
-          Every room is thoughtfully designed for safety, comfort, and that
+          Every room is thoughtfully designed for safety, comfort and that
           little touch of warmth.
         </p>
 
@@ -131,12 +104,9 @@ const LandingPage = () => {
             <div className="sg-room-card" key={room.title}>
               <div className="sg-room-img-wrap">
                 <img src={room.img} alt={room.title} />
-                <span className="sg-room-badge">{room.badge}</span>
               </div>
               <div className="sg-room-body">
-                <h3 className="sg-room-title">
-                  {room.title} <small>· {room.seats}</small>
-                </h3>
+                <h3 className="sg-room-title">{room.seats}</h3>
                 <p className="sg-room-desc">{room.desc}</p>
                 <div className="sg-room-features">
                   {room.features.map((f) => (
@@ -149,7 +119,6 @@ const LandingPage = () => {
                   <div className="sg-room-price">
                     <strong>{room.price}</strong> /month
                   </div>
-                  <button className="sg-book-btn">Book Now</button>
                 </div>
               </div>
             </div>

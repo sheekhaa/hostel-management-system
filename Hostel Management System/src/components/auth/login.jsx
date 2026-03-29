@@ -58,8 +58,18 @@ const LoginPage = () => {
                   id="password"
                   type="password"
                   placeholder="••••••••"
-                  autoComplete="current-password"
                 />
+              </div>
+
+              <div className="lp-label-row">
+                <label className="lp-label">Role</label>
+              </div>
+
+              <div className="lp-input-wrap">
+                <select id="roles" className="lp-select">
+                  <option value="warden">Warden</option>
+                  <option value="admin">Admin</option>
+                </select>
               </div>
             </div>
 
@@ -67,19 +77,6 @@ const LoginPage = () => {
             <button type="submit" className="lp-submit-btn">
               Sign In
             </button>
-
-            {/* Divider */}
-            <div className="lp-divider">
-              <span>or</span>
-            </div>
-
-            {/* Register link */}
-            <p className="lp-register-text">
-              New resident?{" "}
-              <a href="/book-room" className="lp-register-link">
-                Book a room →
-              </a>
-            </p>
           </form>
         </div>
 

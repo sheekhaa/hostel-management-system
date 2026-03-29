@@ -63,9 +63,6 @@ const BookRoomPage = () => {
           <a href="/" className="br-nav-link">
             Back to Home
           </a>
-          <a href="/login" className="br-btn br-btn-ghost">
-            Login
-          </a>
         </div>
       </nav>
 
@@ -188,7 +185,7 @@ const BookRoomPage = () => {
                 <input
                   className="br-input"
                   type="text"
-                  placeholder="e.g. Priya Sharma"
+                  placeholder="e.g. shikha kandel"
                 />
               </div>
             </div>
@@ -285,17 +282,6 @@ const BookRoomPage = () => {
                   readOnly
                 />
               </div>
-            </div>
-
-            {/* Terms */}
-            <div className="br-terms-row">
-              <label className="br-checkbox-label">
-                <input type="checkbox" className="br-checkbox" />I agree to the{" "}
-                <a href="#" className="br-terms-link">
-                  hostel rules and terms
-                </a>{" "}
-                and confirm all information provided is accurate.
-              </label>
             </div>
 
             {/* Submit */}
